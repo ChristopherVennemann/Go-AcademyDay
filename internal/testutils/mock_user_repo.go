@@ -14,3 +14,7 @@ func (m *MockUserRepo) SaveUser(ctx context.Context, user *model.User) error {
 	args := m.Called(ctx, user)
 	return args.Error(0)
 }
+
+func (m *MockUserRepo) GetUsers(ctx context.Context) []*model.User {
+	return nil
+}
