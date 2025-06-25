@@ -11,4 +11,4 @@ services:
     ports:
       - "54321:5432"
     volumes:
-      - ./internal/db/init.pg.sql:/docker-entrypoint-initdb.d/init.pg.sql:ro
+      - ./internal/database:/docker-entrypoint-initdb.d:ro
