@@ -10,6 +10,6 @@ type Repository struct {
 
 func NewRepository(db *database.Database) *Repository {
 	return &Repository{
-		db,
+		UserRepo: db,
 	}
 }

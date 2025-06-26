@@ -56,9 +56,8 @@ func TestUserService_GetUsers_ShouldReturnEmptyListIfNoUsersExist(t *testing.T) 
 	var noUsers []*model.User
 	mockRepo.On("GetUsers", ContextMatcher).Return(noUsers, nil)
 
-	actualUsers, err := userService.GetUsers(context.Background())
+	actualUsers := userService.GetUsers(context.Background())
 
-	require.NoError(t, err)
 	assert.Empty(t, actualUsers)
 	mockRepo.AssertExpectations(t)
 }
@@ -82,8 +81,7 @@ func TestUserService_GetUsers_ShouldReturnListOfUsers(t *testing.T) {
 	}
 	mockRepo.On("GetUsers", ContextMatcher).Return(expectedUsers, nil)
 
-	actualUsers, err := userService.GetUsers(context.Background())
-	require.NoError(t, err)
+	actualUsers := userService.GetUsers(context.Background())
 
 	assert.ElementsMatchf(t, expectedUsers, actualUsers, "users should match")
 	mockRepo.AssertExpectations(t)

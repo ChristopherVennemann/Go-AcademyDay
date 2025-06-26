@@ -50,12 +50,6 @@ func (h *Handler) CreateUser(w http.ResponseWriter, r *http.Request) {
 
 func (h *Handler) GetUsers(w http.ResponseWriter, r *http.Request) {
 	// todo: implement me!
-	_, err := h.userService.GetUsers(r.Context())
-	if err != nil {
-		w.WriteHeader(http.StatusInternalServerError)
-		return
-	}
-
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusNotImplemented)
 }

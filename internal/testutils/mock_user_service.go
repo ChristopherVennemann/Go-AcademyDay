@@ -15,7 +15,7 @@ func (m *MockUserService) CreateUser(ctx context.Context, user *model.User) erro
 	return args.Error(0)
 }
 
-func (m *MockUserService) GetUsers(ctx context.Context) ([]*model.User, error) {
+func (m *MockUserService) GetUsers(ctx context.Context) []*model.User {
 	args := m.Called(ctx)
-	return args.Get(0).([]*model.User), args.Error(1)
+	return args.Get(0).([]*model.User)
 }

@@ -33,8 +33,6 @@ func (db *Database) SaveUser(ctx context.Context, user *model.User) error {
 }
 
 func (db *Database) GetUsers(ctx context.Context) []*model.User {
-	return []*model.User{
-		{ID: 1, Username: "1", Email: "1", CreatedAt: "timestamp"},
-		{ID: 1, Username: "1", Email: "1", CreatedAt: "timestamp"},
-	}
+	// todo: implement me
+	return nil
 }

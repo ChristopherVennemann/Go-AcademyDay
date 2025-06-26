@@ -12,7 +12,7 @@ type userService struct {
 
 type UserService interface {
 	CreateUser(context.Context, *model.User) error
-	GetUsers(ctx context.Context) ([]*model.User, error)
+	GetUsers(ctx context.Context) []*model.User
 }
 
 func NewUserService(r repository.UserRepository) UserService {
@@ -23,7 +23,7 @@ func (s *userService) CreateUser(ctx context.Context, user *model.User) error {
 	return s.repo.SaveUser(ctx, user)
 }
 
-func (s *userService) GetUsers(ctx context.Context) ([]*model.User, error) {
+func (s *userService) GetUsers(ctx context.Context) []*model.User {
 	// todo: implement me!
-	return nil, nil
+	return nil
 }

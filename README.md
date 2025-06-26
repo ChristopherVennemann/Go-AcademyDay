@@ -49,10 +49,16 @@ User und Posts brauchen wir.
 Der Endpunkt ```POST /user``` ist schon fertig,
 und damit können die ersten Nutzer kommen.
 
-Als nächstes brauchen wir einen Endpunkt ```GET /users```, damit wir nicht den Überblick über all die Nutzer verlieren.
+1. Als nächstes brauchen wir einen Endpunkt ```GET /users```, damit wir nicht den Überblick über all die Nutzer verlieren.
     Dazu gibt es schon Tests, [handler](internal/handler/user/handler_test.go), [service](internal/service/user_test.go), 
     [repo](internal/integration/user_repository_integration_test.go) und [integration](internal/integration/user_full_integration_test.go).
     Ich habe auch schon die Methoden und Interfaces angelegt, ihr brauch nur noch auszufüllen.
+    Für den Fall, dass die Datenbankabfrage einen Fehler zurückgibt, könnt ihr vorerst eine leere Liste zurückgeben.
+
+2. Jetzt behandeln wir den Fehler. Wenn die Datenbankabfrage einen Fehler zurückgibt, 
+reicht diesen Fehler bis zum Handler weiter.
+Die Anfrage sollte dann einen http Status 500 zurückgeben.
+Schreibt Tests.
 
 Falls ihr damit fertig werdet, steht euch die Welt offen! Schaut und experimentiert selbst!
     Offene Punkte auf meiner Liste sind z.B.:
