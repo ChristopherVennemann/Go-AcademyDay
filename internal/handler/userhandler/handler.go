@@ -58,5 +58,4 @@ func (h *Handler) GetUsers(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusNotImplemented)
-	_, _ = w.Write([]byte("endpoint still under construction"))
 }
