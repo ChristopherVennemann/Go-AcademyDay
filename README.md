@@ -27,10 +27,13 @@ Ihr brauch eine Docker-API-kompatible Container-Laufzeitumgebung.
 ### Tests
 Damit sollten die Tests auch schon laufen.
 Lasst einfach die Tests des package [internal](internal) laufen,
-```go test internal``` oder via IDE.
+```go test ./internal/...``` oder via IDE.
 
 ### Anwendung
 Mit der [docker-compose](docker-compose.yaml) startet ihr eine passende PostgresDB.
+```sh
+docker compose up -d
+```
 
 Entry point is [main.go](main.go).
 
